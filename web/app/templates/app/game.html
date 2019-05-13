@@ -1,0 +1,124 @@
+{% extends "app/layout.html" %}
+
+{% block styles %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col col-xl-8 col-md-8 col-12 px-2 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header" style="background-color: #78D5D7;">
+                <h4 class="card-title my-auto">控制面板</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div id='login-panel'>
+                        <div class="row">
+                            <div class="col-md-8 col">
+                                <input type='text' class='form-control' placeholder="用户名" name="username">
+                            </div>
+                            <div class="col-md-4 col">
+                                <button id='loginBtn' class="btn btn-outline-info btn-block">登录</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='user-info' style="display: none">
+                        <div class="row">
+                            <div class="col-md-8 col">
+                                <p id='pUsername'></p>
+                            </div>
+                            <div class="col-md-4 col">
+                                <button id='logoutBtn' class="btn btn-outline-info btn-block">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-8 col">
+                            <div class="row" style="margin-left:2px">
+                                <p>距本回合结束还有：</p>
+                                <p id="remainTime">00:00</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col">
+                            <div class="row" style="margin-left:2px">
+                                <p>当前房间：</p>
+                                <p id="pRoomid"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='setRoom-panel'>
+                        <div class="row">
+                            <div class="col-md-8 col">
+                                <input type='text' class='form-control' placeholder="房间号" name="roomid">
+                            </div>
+                            <div class="col-md-4 col">
+                                <button id='setRoomBtn' class="btn btn-outline-info btn-block">进入房间</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6 col">
+                            <input type="text" class="form-control" placeholder="你的数字1" name="num1">
+                        </div>
+                        <div class="col-md-6 col">
+                            <input type="text" class="form-control" placeholder="你的数字2" name="num2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button id="submitNumBtn" type="button"
+                                class="btn btn-outline-success btn-block mt-3">提交</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="data-charts">
+            <div class="row">
+                <div class="col">
+                    <ul class="selector">
+                        <li class="selector"><button class="selector" id="setLenBtn1">10</button></li>
+                        <li class="selector"><button class="selector" id="setLenBtn2">30</button></li>
+                        <li class="selector"><button class="selector" id="setLenBtn3">100</button></li>
+                        <li class="selector"><button class="selector" id="setLenBtn4">全部</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div style="width:100%;" id="historyDiv">
+                        <canvas id="historyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div style="height:200px;" id="rankDiv">
+                        <canvas id="rankChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}
+
+
+    {% block scripts %}
+    {% load staticfiles %}
+    <script src="{% static 'app/app.js' %}"></script>
+    {% endblock %}

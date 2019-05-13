@@ -1,0 +1,32 @@
+{% extends "app/layout.html" %}
+
+{% block styles %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col col-xl-8 col-md-8 col-12 px-2 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header" style="background-color: #78D5D7;">
+                <h4 class="card-title my-auto">游戏说明</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">N 个玩家，每人写 2 个 0~100 之间的有理数(不包括 0 或 100 )，提交给服务器，服务器在当前回合结束时算出所有数字的平均值，然后乘以
+                    0.618（所谓黄金分割常数），得到 G 值。提交的数字最靠近
+                    G（取绝对值）的玩家得到 N-2 分，离 G 最远的玩家得到 -2 分，其他玩家得 0 分。</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "app/layout.html" %}
+
+{% block styles %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/app.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col col-xl-8 col-md-8 col-12 px-2 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header" style="background-color: #97D8B2;">
+                <h4 class="card-title my-auto">创建房间</h4>
+            </div>
+            <div class="card-body">
+                <form action="/goldennum/startRoom/" method="get">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">房间ID</label>
+                        <input type="text" class="form-control" name="roomid" placeholder="输入roomid">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">回合时长</label>
+                        <input type="number" class="form-control" name="time" placeholder="输入回合时长">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">创建</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% for room in rooms %}
+<div class="row">
+    <div class="col col-xl-8 col-md-8 col-12 px-2 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header" style="background-color: #78D5D7;">
+                <h4 class="card-title my-auto">{{ room.roomid }}</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">间隔：{{ room.time }}</p>
+                <p class="card-text">状态：{{ room.status }}</p>
+                <a href="/goldennum/startRoom/?roomid={{ room.roomid }}&time={{ room.time }}"
+                    class="btn btn-outline-primary">启动房间</a>
+                <a href="/goldennum/stopRoom/?roomid={{ room.roomid }}" class="btn btn-outline-danger">关闭房间</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}

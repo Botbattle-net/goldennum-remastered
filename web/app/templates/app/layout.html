@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=yes">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jbesu.com/common/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jbesu.com/common/chart/Chart.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jbesu.com/common/open-iconic/font/css/open-iconic-bootstrap.min.css">
+    {% block styles %}{% endblock %}
+
+    <title>黄金点游戏</title>
+</head>
+
+
+<body>
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="https://cdn.jbesu.com/goldennum/favicon.ico" style="height: 30px;" class="mr-2">
+                    <span>黄金点游戏</span>
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/goldennum/help">
+                                <span class="oi oi-info" title="info" aria-hidden="true"></span>
+                                游戏介绍
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/Botbattle-net">
+                                <span class="oi oi-fork" title="fork" aria-hidden="true"></span>
+                                项目主页
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/goldennum/admin">
+                                <span class="oi oi-wrench" title="wrench" aria-hidden="true"></span>
+                                管理界面
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <footer class="footer bg-light shadow fixed-bottom" style="padding: 1rem; text-align: center;">
+        <div class="container mb-0">
+            <a href="https://jbesu.com/" class="text-dark">&copy; 2019 - NJUMSC</a>
+            <span class="mx-2">|</span>
+            <span>苏ICP备19019564号-1</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jbesu.com/common/js/jquery-3.4.0.min.js"></script>
+    <script src="https://cdn.jbesu.com/common/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jbesu.com/common/chart/Chart.min.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>

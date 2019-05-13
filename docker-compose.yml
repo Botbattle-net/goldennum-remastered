@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    # image: django
+    build: .
+    command: python manage.py runserver 0.0.0.0:8023
+    volumes:
+      - ./web:/code
+      - /var/www/storage/goldennum:/var/www/storage/goldennum
+    ports:
+      - "8083:8023"
+    restart: always
