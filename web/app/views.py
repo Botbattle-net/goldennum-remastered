@@ -44,7 +44,7 @@ def getStatus(request):
     if not roomid:
         return HttpResponseBadRequest()
 
-    if len(roomid) < 1:
+    if roomid == 'false':
         return HttpResponseBadRequest()
 
     for c in roomid:
@@ -72,7 +72,7 @@ def userReg(request):
     # print(request.GET['name'])
     name = request.GET.get('name', None)
 
-    if not name:
+    if name == 'false':
         return HttpResponseBadRequest()
     if len(name) > 20 or len(name) < 1:
         return HttpResponseBadRequest()
@@ -129,6 +129,9 @@ def userAct(request):
         num1 = float(request.GET['num1'])
         num2 = float(request.GET['num2'])
     except:
+        return HttpResponseBadRequest()
+
+    if roomid == 'false':
         return HttpResponseBadRequest()
 
     for c in roomid:
