@@ -2,12 +2,11 @@ version: '3'
 
 services:
   web:
-    # image: django
     build: .
-    command: python manage.py runserver 0.0.0.0:8023
+    command: gunicorn -b 0.0.0.0:8080 -w4 web.wsgi
     volumes:
-      - ./web:/code
+      - ./web:/srv/django
       - /var/www/storage/goldennum:/var/www/storage/goldennum
     ports:
-      - "8083:8023"
+      - "8083:8080"
     restart: always
