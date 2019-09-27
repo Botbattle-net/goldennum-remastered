@@ -8,7 +8,7 @@ import json
 
 import requests
 
-url = "http://127.0.0.1:8023/goldennum"
+url = "http://127.0.0.1:8080/goldennum"
 closeUser = ""
 farUser = ""
 userNum = 0
