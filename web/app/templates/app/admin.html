@@ -15,7 +15,7 @@
                 <h4 class="card-title my-auto">创建房间</h4>
             </div>
             <div class="card-body">
-                <form action="/goldennum/startRoom/" method="get">
+                <form action="/goldennum/startRoom/" method="get" target="_blank">
                     <div class="form-group">
                         <label for="exampleInputEmail1">房间ID</label>
                         <input type="text" class="form-control" name="roomid" placeholder="输入roomid">
@@ -40,9 +40,10 @@
             <div class="card-body">
                 <p class="card-text">间隔：{{ room.time }}</p>
                 <p class="card-text">状态：{{ room.status }}</p>
-                <a href="/goldennum/startRoom/?roomid={{ room.roomid }}&time={{ room.time }}"
+                <a href="/goldennum/startRoom/?roomid={{ room.roomid }}&time={{ room.time }}" target="_blank"
                     class="btn btn-outline-primary">启动房间</a>
-                <a href="/goldennum/stopRoom/?roomid={{ room.roomid }}" class="btn btn-outline-danger">关闭房间</a>
+                <a href="/goldennum/stopRoom/?roomid={{ room.roomid }}" target="_blank"
+                    class="btn btn-outline-danger">关闭房间</a>
             </div>
         </div>
     </div>
