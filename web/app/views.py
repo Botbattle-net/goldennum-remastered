@@ -27,7 +27,7 @@ def help(request):
 
 def admin(request):
     if not request.user.is_staff:
-        return HttpResponseRedirect("/admin")
+        return HttpResponseRedirect("/admin/login/?next=/goldennum/admin/")
     rooms = Room.objects.all()
     return render(request, 'app/admin.html', {'rooms': rooms})
 
