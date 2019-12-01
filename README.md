@@ -9,3 +9,22 @@ N 个玩家，每人写 **2** 个 **0~100** 之间的有理数 **（不包括 0 
 ```
 docker-compose up
 ```
+
+## 创建管理员用户
+
+```
+python3 manage.py createsuperuser
+```
+
+## 数据库初始化
+
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
+## 房间管理
+
+1. 从主页进入管理后台，使用之前创建的用户登录
+
+2. 回到主页，进入房间管理
