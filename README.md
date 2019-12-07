@@ -28,9 +28,3 @@ python3 manage.py migrate
 ```
 python3 manage.py createsuperuser
 ```
-
-## 房间管理
-
-1. 从主页进入管理后台，使用之前创建的用户登录
-
-2. 回到主页，进入房间管理
