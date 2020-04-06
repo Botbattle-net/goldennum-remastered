@@ -7,4 +7,4 @@ def index(request):
 
 
 def favicon(request):
-    return HttpResponseRedirect("https://cdn.jbesu.com/goldennum/favicon.ico")
+    return HttpResponseRedirect("https://storage.jbesu.com/goldennum/favicon.ico")
