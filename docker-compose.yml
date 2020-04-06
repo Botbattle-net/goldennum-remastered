@@ -1,12 +1,21 @@
 version: '3'
 
 services:
-  web:
+  server:
     build: .
-    command: gunicorn -b 0.0.0.0:8080 -w4 web.wsgi
+    command: ./entrypoint.sh
     volumes:
       - ./web:/srv/django
-      - /var/www/storage/goldennum:/var/www/storage/goldennum
+      - ./shared_static:/var/www/storage/goldennum:rw
+    restart: always
+
+  httpd:
+    image: abiosoft/caddy:1.0.3-no-stats
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ./shared_static:/var/www/storage/goldennum:ro
     ports:
       - "8083:8080"
+    links:
+      - server
     restart: always

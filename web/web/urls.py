@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('goldennum/', include('app.urls')),
     path('', views.index),
-    path('favicon.ico', views.favicon)
 ]

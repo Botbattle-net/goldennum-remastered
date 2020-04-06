@@ -27,7 +27,7 @@ SECRET_KEY = secret_key.secret_key
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'bot.jbesu.com',
+    'server',
     '127.0.0.1'
 ]
 
@@ -119,10 +119,7 @@ USE_TZ = True
 
 PROJECT_ROOT = '/var/www/storage/goldennum'
 
-#STORAGE_URL = 'https://storage.jbesu.com/jitter'
 STORAGE_URL = ''
-if (DEBUG == False):
-    STORAGE_URL = 'https://storage.jbesu.com/goldennum'
 
 STATIC_URL = STORAGE_URL + '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')

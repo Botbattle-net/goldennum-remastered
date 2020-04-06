@@ -1,0 +1,17 @@
+0.0.0.0:8080 {
+    root /var/www/storage/goldennum
+
+    proxy /goldennum http://server:8080/goldennum {
+        without /goldennum
+    }
+    proxy /admin http://server:8080/admin {
+        without /admin
+    }
+
+    redir {
+        if {path} is /
+        / /goldennum
+    }
+
+    log stdout
+}
