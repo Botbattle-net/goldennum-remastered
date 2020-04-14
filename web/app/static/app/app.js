@@ -49,12 +49,12 @@ function Timer(time) {
 var historyData = {
     type: 'line',
     data: {
-        labels: ['1', '2', '3'],
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
         datasets: [{
             label: '黄金点',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [32.7, 19.3, 10.4],
+            data: [38.7, 19.3, 10.4, 26.7, 14.3, 8.2, 18, 10],
             fill: false,
         }]
     },
@@ -98,12 +98,12 @@ var historyData = {
 var rankData = {
     type: 'horizontalBar',
     data: {
-        labels: ['homo', 'van', 'billy', 'banana'],
+        labels: ['alice', 'steve', 'notch', 'herobrine', 'winnie', 'tiger'],
         datasets: [{
             label: '分数',
             backgroundColor: 'rgb(0, 123, 255)',
             borderColor: 'rgb(0, 123, 255)',
-            data: [107, 35, 1, -10],
+            data: [107, 35, 70, -10, -20, 60],
             fill: false,
         }]
     },
