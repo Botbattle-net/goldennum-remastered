@@ -7,7 +7,7 @@ services:
     volumes:
       - ./web:/srv/django
       - ./shared_static:/var/www/storage/goldennum:rw
-    restart: always
+    restart: unless-stopped
 
   httpd:
     image: abiosoft/caddy:1.0.3-no-stats
@@ -18,4 +18,4 @@ services:
       - "8083:8080"
     links:
       - server
-    restart: always
+    restart: unless-stopped
