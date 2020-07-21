@@ -1,4 +1,6 @@
-# 黄金点游戏-重制版
+# DEPRECATED, USE [forewing/goldennum](https://github.com/forewing/goldennum) INSTEAD!!!
+
+# ~黄金点游戏-重制版~
 
 ## 游戏规则
 
